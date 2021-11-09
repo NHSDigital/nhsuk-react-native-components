@@ -5,6 +5,9 @@
   "repository": "https://github.com/NHSDigital/nhsuk-react-native-components",
   "author": "NHSBT and NHSDigital",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx"
+  },
   "dependencies": {
     "color": "^4.0.1",
     "react": "^17.0.2",
@@ -14,8 +17,31 @@
     "react-native-svg": "^12.1.1"
   },
   "devDependencies": {
+    "@react-native-community/eslint-config": "^3.0.1",
     "@types/color": "^3.0.2",
     "@types/react-native": "^0.66.3",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "eslint": "^8.2.0",
+    "prettier": "^2.4.1",
     "typescript": "^4.4.4"
+  },
+  "eslintConfig": {
+    "extends": "@react-native-community",
+    "globals": {
+      "NodeJS": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "root": true
+  },
+  "prettier": {
+    "bracketSameLine": true,
+    "endOfLine": "auto",
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }
