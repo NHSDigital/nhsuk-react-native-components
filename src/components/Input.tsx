@@ -13,9 +13,7 @@ export type InputProps = {
   inputRef?: any;
   noFormGroup?: boolean;
   width?: '30' | '20' | '12' | '10' | '5' | '4' | '3' | '2';
-  password?: boolean; // Turn this input input into a password field. The show/hide password toggle is uncontrolled unless the passwordVisible and onPasswordTogglePress props are set.
-  passwordVisible?: boolean;
-  onPasswordTogglePress?: (passwordVisible: boolean) => void;
+  password?: boolean;
 } & FormGroupProps &
   TextInputProps;
 
@@ -36,14 +34,10 @@ const Input = ({
   accessible,
   width,
   password,
-  passwordVisible,
-  onPasswordTogglePress,
   maxLength,
   ...rest
 }: InputProps) => {
   const [focused, setFocused] = useState(false);
-  const [passwordVisibleInternal, setPasswordVisibleInternal] = useState(false);
-  const isPasswordVisible = onPasswordTogglePress ? passwordVisible : passwordVisibleInternal;
 
   const inputStyle: StyleProp<TextStyle> = [styles.input];
   const focusContainerStyle: StyleProp<ViewStyle> = [];
@@ -100,13 +94,13 @@ const Input = ({
   let secureTextEntryValue = secureTextEntry;
 
   // Force the content type to be password if password toggle is used and is currently hiding the password.
-  if (password && !isPasswordVisible && textContentTypeValue !== 'newPassword') {
+  if (password && textContentTypeValue !== 'newPassword') {
     textContentTypeValue = 'password';
     autoComplete = 'password';
   }
 
   if (password) {
-    secureTextEntryValue = !isPasswordVisible;
+    secureTextEntryValue = true;
     autoCapitalize = 'none';
   }
 
@@ -140,22 +134,6 @@ const Input = ({
     <FormGroup label={label} hint={hint} error={error} noMarginBottom={noMarginBottom} style={containerStyle}>
       <View style={[styles.container, focusContainerStyle]} removeClippedSubviews={false}>
         <TextInput ref={inputRef} {...textInputProps} />
-        {password && (
-          <Pressable
-            style={styles.passwordToggleButton}
-            accessibilityRole="button"
-            onPress={() => {
-              if (onPasswordTogglePress) {
-                onPasswordTogglePress(!isPasswordVisible);
-              } else {
-                setPasswordVisibleInternal(!isPasswordVisible);
-              }
-            }}>
-            <Text noMarginBottom bold accessibilityLabel={`${isPasswordVisible ? 'Hide' : 'Show'} password`}>
-              {isPasswordVisible ? 'Hide' : 'Show'}
-            </Text>
-          </Pressable>
-        )}
       </View>
     </FormGroup>
   );
@@ -196,14 +174,6 @@ const styles = StyleSheet.create({
   error: {
     borderWidth: nhsuk.globals.formElements.focusWidth,
     borderColor: nhsuk.colours.forms.errorColor,
-  },
-  passwordToggleButton: {
-    backgroundColor: nhsuk.colours.greyscale.grey4,
-    position: 'absolute',
-    minHeight: inputFontStyle.fontSize * 2.5 - 12,
-    justifyContent: 'center',
-    right: 7,
-    paddingHorizontal: 12,
   },
   'nhsuk-input--width-30': {
     width: approximateExUnit(59),

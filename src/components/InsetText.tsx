@@ -8,13 +8,10 @@ type InsetTextProps = {
   children: ReactNode;
   accessibilityLabel?: string;
   visuallyHiddenText?: string;
-  // optional parameter to improve accessibility when passing children containing links.
-  renderChildrenOnly?: boolean;
 };
 
 const InsetText = ({
   children,
-  renderChildrenOnly,
   accessibilityLabel = '',
   visuallyHiddenText = 'Information: ',
 }: InsetTextProps) => (
@@ -24,8 +21,7 @@ const InsetText = ({
         {visuallyHiddenText}
       </Text>
     )}
-    {!renderChildrenOnly && <Text noMarginBottom>{children}</Text>}
-    {renderChildrenOnly && <>{children}</>}
+    <Text noMarginBottom>{children}</Text>
   </View>
 );
 

@@ -2,11 +2,10 @@ import React, { ReactNode, useState } from 'react';
 import { StyleSheet, View, ViewProps } from 'react-native';
 import Svg, { Polygon } from 'react-native-svg';
 import nhsuk from 'src/styles';
+import govukEquilateralHeight from 'src/utils/govukEquilateralHeight';
 import Link from './Link';
 import Pressable from './Pressable';
 import Text from './Text';
-
-const govukEquilateralHeight = (base: number) => (base / 2) * Math.sqrt(3);
 
 type ArrowProps = {
   size?: number;

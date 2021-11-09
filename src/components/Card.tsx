@@ -11,7 +11,6 @@ const cardBorderHoverColor = nhsuk.colours.greyscale.grey3;
 export type CardProps = {
   noMarginBottom?: boolean;
   pressableStyle?: boolean;
-  smallPadding?: boolean;
   style?: StyleProp<any>;
   containerStyle?: StyleProp<any>;
   cardRef?: React.Ref<any>;
@@ -22,7 +21,6 @@ const Card: FC<CardProps> = ({
   children,
   noMarginBottom,
   pressableStyle,
-  smallPadding,
   onPress,
   style,
   containerStyle,
@@ -52,7 +50,6 @@ const Card: FC<CardProps> = ({
             styles.base,
             pressableStyle && styles.pressable,
             pressableStyle && pressed && styles.pressed,
-            smallPadding && styles.smallPadding,
             style,
           ]}
           testID={testID}>
@@ -69,7 +66,6 @@ const Card: FC<CardProps> = ({
         styles.container,
         pressableStyle && styles.pressable,
         pressableStyle && pressed && styles.pressed,
-        smallPadding && styles.smallPadding,
         noMarginBottom && nhsuk.styles.noMarginBottom,
         style,
       ]}
@@ -96,9 +92,6 @@ const styles = StyleSheet.create({
   pressed: {
     borderColor: cardBorderHoverColor,
     bottom: -cardBorderWidth,
-  },
-  smallPadding: {
-    padding: nhsuk.spacing.spacingResponsiveScale[4],
   },
 });
 

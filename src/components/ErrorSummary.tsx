@@ -101,9 +101,6 @@ const styles = StyleSheet.create({
   body: {
     marginBottom: nhsuk.spacing.spacingResponsiveScale[4],
   },
-  flatList: {
-    flexGrow: 0,
-  },
   errorLink: {
     color: nhsuk.colours.forms.errorColor,
     fontFamily: nhsuk.fontFamilies.bold,

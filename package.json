@@ -12,7 +12,6 @@
     "color": "^4.0.1",
     "react": "^17.0.2",
     "react-native": "^0.66.2",
-    "react-native-gesture-handler": "^1.10.3",
     "react-native-picker-select": "^8.0.4",
     "react-native-svg": "^12.1.1"
   },

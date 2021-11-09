@@ -4,6 +4,12 @@ import nhsuk from 'src/styles';
 import Pressable from './Pressable';
 import Text, { TextProps } from './Text';
 
+/**
+ * The Link component includes an "inline" prop that renders the component inline without using the Pressable component.
+ * This is because the Pressable component can only render content in a box, with the whole box being pressable. The
+ * inline version mitigates this limitation, but it means a minimum hit slop cannot be applied.
+ */
+
 export type LinkProps = {
   children?: ReactNode;
   noMarginBottom?: boolean;
