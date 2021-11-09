@@ -1,0 +1,19 @@
+{
+  "name": "nhsuk-react-native-components",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/NHSDigital/nhsuk-react-native-components",
+  "author": "NHSBT and NHSDigital",
+  "license": "MIT",
+  "dependencies": {
+    "color": "^4.0.1",
+    "react": "^17.0.2",
+    "react-native": "^0.66.2",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-picker-select": "^8.0.4",
+    "react-native-svg": "^12.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
