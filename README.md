@@ -46,7 +46,7 @@ For a bare React Native app, a `react-native.config.js` file is needed with the 
 
 ```javascript
 module.exports = {
-  assets: ['./node_modules/nhsuk-react-native-components/fonts/']
+  assets: ['./node_modules/nhsuk-react-native-components/assets/fonts/']
 };
 ```
 
