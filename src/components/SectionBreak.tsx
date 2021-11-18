@@ -27,7 +27,7 @@ const SectionBreak = ({ variant = 'l' }: SectionBreakProps) => {
   return <View style={style} />;
 };
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   base: {
     borderBottomWidth: 1,
     borderBottomColor: nhsuk.colours.border.borderColor,

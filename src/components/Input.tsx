@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Platform, StyleProp, StyleSheet, TextInput, TextInputProps, TextStyle, View, ViewStyle } from 'react-native';
 import nhsuk from 'src/styles';
 import FormGroup, { FormGroupProps } from './FormGroup';
-import Pressable from './Pressable';
 import Text, { textStyles } from './Text';
 import approximateExUnit from 'src/utils/approximateExUnit';
 

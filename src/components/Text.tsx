@@ -141,7 +141,7 @@ const Text = ({
   );
 };
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   base: {
     color: nhsuk.colours.text.textColor,
   },
