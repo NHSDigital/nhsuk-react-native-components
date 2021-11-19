@@ -1,12 +1,22 @@
 {
   "name": "nhsuk-react-native-components",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/NHSDigital/nhsuk-react-native-components",
   "author": "NHSBT and NHSDigital",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint src --ext .js,.jsx,.ts,.tsx"
+    "cleanup": "rm -rf dist/ > /dev/null && rm -rf lib/ > /dev/null",
+    "build:dist": "rollup -c",
+    "build:lib": "NODE_ENV=production babel src --out-dir lib --extensions \".ts,.tsx\" --ignore \"**/__tests__,**/__mocks__,**/setupTests.ts\"",
+    "build": "yarn cleanup && yarn build:dist && yarn build:lib",
+    "test": "jest",
+    "test:ci": "jest --coverage",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "lint:ci": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "prepublishOnly": "yarn lint:ci && yarn test:ci"
   },
   "dependencies": {
     "color": "^4.0.1",
@@ -16,14 +26,71 @@
     "react-native-svg": "^12.1.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.16.0",
+    "@babel/plugin-proposal-private-methods": "^7.16.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
     "@react-native-community/eslint-config": "^3.0.1",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.6",
     "@types/color": "^3.0.2",
     "@types/react-native": "^0.66.3",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
+    "babel-loader": "^8.2.3",
     "eslint": "^8.2.0",
     "prettier": "^2.4.1",
+    "rollup": "^2.60.0",
+    "rollup-plugin-copy-assets": "^2.0.3",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.31.0",
+    "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "react-native": ">=0.66",
+    "react-native-picker-select": ">=8"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/typescript",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-numeric-separator",
+      [
+        "@babel/proposal-class-properties",
+        {
+          "loose": true
+        }
+      ],
+      "@babel/proposal-object-rest-spread",
+      [
+        "@babel/plugin-proposal-private-property-in-object",
+        {
+          "loose": true
+        }
+      ],
+      [
+        "@babel/plugin-proposal-private-methods",
+        {
+          "loose": true
+        }
+      ]
+    ],
+    "sourceMaps": "inline"
   },
   "eslintConfig": {
     "extends": "@react-native-community",
