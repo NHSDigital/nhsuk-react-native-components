@@ -11,7 +11,6 @@ NHS.UK React Native components contains the code you need to start building user
     - [Dependency info](#dependency-info)
   - [Consumer app setup](#consumer-app-setup)
     - [Using the Frutiger font files](#using-the-frutiger-font-files)
-    - [Using NHS.UK icons](#using-nhsuk-icons)
   - [Contribute](#contribute)
   - [Get in touch](#get-in-touch)
   - [Licence](#licence)
@@ -34,7 +33,7 @@ npm install nhsuk-react-native-components
 |-|-|
 |`color`|Manipulating various colour styles.|
 |`react-native-picker-select`|Implementing the native platform select component.|
-|`react-native-svg`|Importing SVG files.|
+|`react-native-svg`|Rendering SVG content.|
 
 ## Consumer app setup
 
@@ -51,54 +50,6 @@ module.exports = {
 ```
 
 Then run `npx react-native link` to link the font files to the native platform config files.
-
-### Using NHS.UK icons
-
-The NHS.UK icons are represented as SVG files. A bare React Native app needs extra setup to import them. Configure `metro.config.js` with the following content:
-
-```javascript
-const { getDefaultConfig } = require('metro-config');
-
-module.exports = (async () => {
-  const {
-    resolver: { assetExts, sourceExts },
-  } = await getDefaultConfig();
-  return {
-    transformer: {
-      getTransformOptions: async () => ({
-        transform: {
-          experimentalImportSupport: false,
-          inlineRequires: false,
-        },
-      }),
-      babelTransformerPath: require.resolve('react-native-svg-transformer'),
-    },
-    resolver: {
-      assetExts: assetExts.filter((ext) => ext !== 'svg'),
-      sourceExts: [...sourceExts, 'svg'],
-    },
-  };
-})();
-```
-
-If using TypeScript, a type needs to be declared in `declarations.d.ts` to allow SVG imports:
-
-```typescript
-declare module '*.svg' {
-  import React from 'react';
-  import { SvgProps } from 'react-native-svg';
-  const content: React.FC<SvgProps>;
-  export default content;
-}
-```
-
-Icons can now be imported as React components:
-
-```typescript
-import ChevronLeftIcon from 'nhsuk-react-native-components/icons/icon-chevron-left.svg';
-```
-
-For more detailed installation instructions, visit the [react-native-svg](https://github.com/react-native-svg/react-native-svg#use-with-svg-files) repo.
 
 ## Contribute
 

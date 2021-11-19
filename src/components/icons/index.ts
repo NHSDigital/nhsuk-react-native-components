@@ -14,6 +14,7 @@ export {
   Plus,
   Search,
   Tick,
+  DropdownArrow,
 } from './Icons';
 
 export default Icons;

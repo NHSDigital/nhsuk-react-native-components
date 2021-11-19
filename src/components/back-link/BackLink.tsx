@@ -1,7 +1,7 @@
 import React from 'react';
 import { PressableProps, StyleSheet } from 'react-native';
 import Text from '../text';
-import ChevronLeftIcon from 'assets/icons/icon-chevron-left.svg';
+import { ChevronLeft } from '../icons';
 import nhsuk from 'src/styles';
 import Pressable from '../pressable';
 
@@ -11,7 +11,7 @@ export type BackLinkProps = {
 
 const BackLink = ({ title, style, ...rest }: BackLinkProps) => (
   <Pressable accessibilityRole="link" style={[styles.pressable, style as any]} {...rest}>
-    <ChevronLeftIcon width={24} height={24} fill={nhsuk.colours.links.linkColor} />
+    <ChevronLeft width={24} height={24} fill={nhsuk.colours.links.linkColor} />
     <Text linkStyling noMarginBottom variant="nhsuk-body-s" style={styles.backLinkText}>
       {title}
     </Text>

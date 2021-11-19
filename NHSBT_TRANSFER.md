@@ -12,7 +12,7 @@ Notes about the transfer of the existing component library work done by NHSBT, t
 
 ## Components built so far
 
-The following list of components have been built to NHSBT's needs and are based on the NHS service manual, `nhsuk-frontend` and `nhsuk-react-components` codebases.
+The following list of components have been built to NHSBT's needs and are based on the NHS service manual, `nhsuk-frontend` and `nhsuk-react-components` repositories.
 
 Whilst they do follow most of the rules and patterns of the service manual, they will need a review to bring them completely in line.
 Most notably, the grid system and responsive styles are not present; the components have only been built for mobile views.
@@ -41,4 +41,4 @@ Most notably, the grid system and responsive styles are not present; the compone
 - [Text](src/components/Text.tsx)
 - [WarningCallout](src/components/WarningCallout.tsx)
 
-\* The Pressable component is not an NHS.UK component but rather serves as a wrapper and enforces a minimu "hit slop" for pressable components to meet accessibility standards.
+\* The Pressable component is not an NHS.UK component but rather serves as a wrapper and enforces a minimum "hit slop" for pressable components to meet accessibility standards.

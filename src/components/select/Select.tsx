@@ -3,7 +3,7 @@ import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import nhsuk from 'src/styles';
 import RNPickerSelect, { PickerSelectProps } from 'react-native-picker-select';
 import Text, { textStyles } from '../text';
-import DropdownArrowIcon from 'assets/icons/DropdownArrow.svg';
+import { DropdownArrow } from '../icons';
 import FormGroup, { FormGroupProps } from '../form-group';
 
 export type SelectProps = {
@@ -45,7 +45,7 @@ const Select = ({
           <Text noMarginBottom style={styles.activeItemText} numberOfLines={1}>
             {value || placeholder}
           </Text>
-          <DropdownArrowIcon width={10} height={10} fill={nhsuk.colours.text.textColor} style={styles.dropdownArrow} />
+          <DropdownArrow width={10} height={10} fill={nhsuk.colours.text.textColor} style={styles.dropdownArrow} />
         </View>
       </RNPickerSelect>
     </FormGroup>

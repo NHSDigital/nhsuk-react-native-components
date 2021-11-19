@@ -1,6 +1,5 @@
 import React, { ReactNode, useState } from 'react';
-import MinusIcon from 'assets/icons/icon-minus.svg';
-import PlusIcon from 'assets/icons/icon-plus.svg';
+import { Minus, Plus } from '../icons';
 import { Pressable, StyleProp, StyleSheet, View, ViewProps, ViewStyle } from 'react-native';
 import nhsuk from 'src/styles';
 import { SvgProps } from 'react-native-svg';
@@ -37,7 +36,7 @@ const Expander = ({ id, summary, text, defaultValue, onExpand, accessibilityLabe
         accessible
         accessibilityLabel={accessibilityLabel}
         accessibilityState={{ expanded }}>
-        {expanded ? <MinusIcon {...iconProps} /> : <PlusIcon {...iconProps} />}
+        {expanded ? <Minus {...iconProps} /> : <Plus {...iconProps} />}
         {summary}
       </Pressable>
       {expanded && <View style={styles.summaryExpandedText}>{text}</View>}

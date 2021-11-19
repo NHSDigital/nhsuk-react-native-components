@@ -1,6 +1,6 @@
 import React from 'react';
 import { PressableProps, StyleSheet, View } from 'react-native';
-import ArrowRightCircleIcon from 'assets/icons/icon-arrow-right-circle.svg';
+import { ArrowRightCircle } from '../icons';
 import nhsuk from 'src/styles';
 import Text from '../text';
 import Pressable from '../pressable';
@@ -15,7 +15,7 @@ export type ActionLinkProps = {
 const ActionLink = ({ label, noMarginBottom, ...rest }: ActionLinkProps) => (
   <Pressable accessibilityLabel={label} accessibilityRole="link" {...rest}>
     <View style={[styles.base, noMarginBottom && styles.noMarginBottom]}>
-      <ArrowRightCircleIcon width={iconSize} height={iconSize} fill={nhsuk.colours.primary.green} style={styles.icon} />
+      <ArrowRightCircle width={iconSize} height={iconSize} fill={nhsuk.colours.primary.green} style={styles.icon} />
       <Text noMarginBottom variant="h4" style={styles.label}>
         {label}
       </Text>
