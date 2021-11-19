@@ -47,3 +47,12 @@ export {
 export { default as Tag, TagProps } from './components/tag';
 export { default as Text, TextProps, textStyles } from './components/text';
 export { default as WarningCallout, WarningCalloutProps, WarningCalloutLabelProps } from './components/warning-callout';
+export { default as nhsuk } from './styles';
+export {
+  approximateExUnit,
+  calculateMinHitSlop,
+  MIN_TAP_TARGET_SIZE,
+  shade,
+  tint,
+  govukEquilateralHeight,
+} from './utils';
