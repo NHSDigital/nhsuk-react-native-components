@@ -2,6 +2,8 @@
 
 NHS.UK React Native components contains the code you need to start building user interfaces for NHS apps written in React Native.
 
+> **Note:** This package is currently pre-alpha. It is not yet ready for use in production.
+
 ## Table of contents
 
 - [NHS.UK React Native components](#nhsuk-react-native-components)
