@@ -19,9 +19,7 @@
     "prepublishOnly": "yarn lint:ci && yarn test:ci"
   },
   "dependencies": {
-    "color": "^4.0.1",
-    "react-native-picker-select": "^8.0.4",
-    "react-native-svg": "^12.1.1"
+    "color": "^4.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
@@ -57,7 +55,8 @@
   "peerDependencies": {
     "react": ">=16",
     "react-native": ">=0.66",
-    "react-native-picker-select": ">=8"
+    "react-native-picker-select": "^8.0.4",
+    "react-native-svg": "^12.1.1"
   },
   "files": [
     "dist",
