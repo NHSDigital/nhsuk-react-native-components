@@ -10,8 +10,9 @@
   "scripts": {
     "cleanup": "rm -rf dist/ > /dev/null && rm -rf lib/ > /dev/null",
     "build:dist": "rollup -c",
+    "build:types": "tsc --declaration --emitDeclarationOnly --outDir lib",
     "build:lib": "NODE_ENV=production babel src --out-dir lib --extensions \".ts,.tsx\" --ignore \"**/__tests__,**/__mocks__,**/setupTests.ts\"",
-    "build": "yarn cleanup && yarn build:dist && yarn build:lib",
+    "build": "yarn cleanup && yarn build:dist && yarn build:lib && yarn build:types",
     "test": "jest",
     "test:ci": "jest --coverage --passWithNoTests",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
