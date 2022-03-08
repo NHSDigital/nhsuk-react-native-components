@@ -1,6 +1,10 @@
 # NHS.UK React Native components
 
+> **Note:** This package is currently pre-alpha. It is not yet ready for use in production.
+
 NHS.UK React Native components contains the code you need to start building user interfaces for NHS apps written in React Native.
+
+Originally created by [NHS Blood & Transplant](https://github.com/NHS-Blood-and-Transplant), maintained by NHS Digital.
 
 ## Table of contents
 
