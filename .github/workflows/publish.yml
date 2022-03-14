@@ -20,7 +20,7 @@ jobs:
         run: yarn build
 
       - name: Bump Version - ${{ github.ref_name }}
-      - run: yarn version --new-version ${{ github.ref_name }} --no-git-tag-version
+        run: yarn version --new-version ${{ github.ref_name }} --no-git-tag-version
 
       - name: Publish Release
         run: yarn publish
