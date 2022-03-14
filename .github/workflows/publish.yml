@@ -13,7 +13,18 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
       - run: yarn
-      - run: yarn version ${{ github.ref_name }} --no-git-tag-version
+      - run: yarn version --new-version ${{ github.ref_name }} --no-git-tag-version
+
       - run: yarn publish
+        name: Publish Release
+        if: "!github.event.release.prerelease"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+
+      - run: yarn publish --tag prerelease
+        name: Publish Prerelease
+        if: "github.event.release.prerelease"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
