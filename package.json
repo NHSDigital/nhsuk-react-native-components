@@ -47,6 +47,7 @@
     "react": "^17.0.2",
     "react-native": "^0.66.2",
     "react-native-svg": "^12.1.1",
+    "react-native-picker-select": "^8.0.4",
     "rollup": "^2.60.0",
     "rollup-plugin-copy-assets": "^2.0.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
