@@ -1,0 +1,38 @@
+name: Run Tests and Checks
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+
+
+      - name: Install Packages
+        run: yarn
+
+      - name: ESLint Run
+        run: yarn lint:ci
+
+      - name: Jest Run
+        run: yarn test:ci
+
+      - name: Build Release
+        run: yarn build
+
+      - name: Bump Development Version
+        if: github.ref == 'ref/head/main'
+        run: yarn version --prerelease --preid dev
+
+      - name: Publish to npmjs
+        if: github.ref == 'ref/head/main'
+        run: yarn publish --tag dev
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push Release Tag
+        if: github.ref == 'ref/head/main'
+        run: git push
