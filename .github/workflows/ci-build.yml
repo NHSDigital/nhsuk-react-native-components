@@ -24,15 +24,15 @@ jobs:
         run: yarn build
 
       - name: Bump Development Version
-        if: github.ref == 'ref/head/main'
+        if: github.ref == 'refs/heads/main'
         run: yarn version --prerelease --preid dev
 
       - name: Publish to npmjs
-        if: github.ref == 'ref/head/main'
+        if: github.ref == 'refs/heads/main'
         run: yarn publish --tag dev
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Push Release Tag
-        if: github.ref == 'ref/head/main'
+        if: github.ref == 'refs/heads/main'
         run: git push
