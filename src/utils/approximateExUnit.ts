@@ -6,7 +6,6 @@ const inputFontStyle = textStyles['nhsuk-body-m'];
  * @param ex The number of ex units.
  * @returns An approximate translation.
  */
-
 const approximateExUnit = (ex: number) => ex * (inputFontStyle.fontSize / 2);
 
 export default approximateExUnit;

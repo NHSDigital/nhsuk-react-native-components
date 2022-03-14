@@ -33,11 +33,11 @@ npm install nhsuk-react-native-components
 
 ### Dependency info
 
-|Dependency|Used for|
-|-|-|
-|`color`|Manipulating various colour styles.|
-|`react-native-picker-select`|Implementing the native platform select component.|
-|`react-native-svg`|Rendering SVG content.|
+| Dependency                   | Used for                                           |
+| ---------------------------- | -------------------------------------------------- |
+| `color`                      | Manipulating various colour styles.                |
+| `react-native-picker-select` | Implementing the native platform select component. |
+| `react-native-svg`           | Rendering SVG content.                             |
 
 ## Consumer app setup
 
@@ -49,7 +49,7 @@ For a bare React Native app, a `react-native.config.js` file is needed with the 
 
 ```javascript
 module.exports = {
-  assets: ['./node_modules/nhsuk-react-native-components/dist/assets/fonts/']
+  assets: ['./node_modules/nhsuk-react-native-components/dist/assets/fonts/'],
 };
 ```
 
