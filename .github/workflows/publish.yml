@@ -13,31 +13,33 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Install Packages
-        run: yarn
+      - run: echo '${{ toJSON(github.event) }}'
 
-      - name: Build Release
-        run: yarn build
+      # - name: Install Packages
+      #   run: yarn
 
-      - name: Bump Version - ${{ github.ref_name }}
-        run: yarn version --new-version ${{ github.ref_name }} --no-git-tag-version
+      # - name: Build Release
+      #   run: yarn build
 
-      - name: Publish Release
-        run: yarn publish
-        if: "!github.event.release.prerelease"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Bump Version - ${{ github.ref_name }}
+      #   run: yarn version --new-version ${{ github.ref_name }} --no-git-tag-version
 
-      - name: Publish Prerelease
-        run: yarn publish --tag prerelease
-        if: "github.event.release.prerelease"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish Release
+      #   run: yarn publish
+      #   if: "!github.event.release.prerelease"
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Push Updated Tag to Repository
-        run: |
-            git config --global user.name "Automatic Release"
-            git config --global user.email "automatic-release@noreply.github.com"
-            git commit -am "${{ github.ref_name }}"
-            git push
+      # - name: Publish Prerelease
+      #   run: yarn publish --tag prerelease
+      #   if: "github.event.release.prerelease"
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # - name: Push Updated Tag to Repository
+      #   run: |
+      #       git config --global user.name "${{ github.actor }}"
+      #       git config --global user.email "automatic-release@noreply.github.com"
+      #       git commit -am "${{ github.ref_name }}"
+      #       git push origin HEAD:main
 
