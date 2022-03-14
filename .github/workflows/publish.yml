@@ -12,8 +12,8 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm version ${{ github.ref_name }}
-      - run: npm publish
+      - run: yarn
+      - run: yarn version ${{ github.ref_name }} --no-git-tag-version
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
