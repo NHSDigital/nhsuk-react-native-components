@@ -30,7 +30,7 @@ jobs:
       - name: Publish to npmjs
         if: github.ref == 'refs/heads/main'
         run: |
-            git config --global user.name "Automatic Release"
+            git config --global user.name "${{ github.actor }} (Automatic Release)"
             git config --global user.email "automatic-release@noreply.github.com"
             yarn version --prerelease --preid dev
             yarn publish --tag dev
