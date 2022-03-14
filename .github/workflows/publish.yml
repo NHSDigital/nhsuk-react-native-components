@@ -34,3 +34,10 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Push Updated Tag to Repository
+        run: |
+            git config --global user.name "Automatic Release"
+            git config --global user.email "automatic-release@noreply.github.com"
+            git commit -am "${{ github.ref_name }}"
+            git push
+
