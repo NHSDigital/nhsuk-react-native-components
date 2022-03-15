@@ -1,6 +1,6 @@
 {
   "name": "nhsuk-react-native-components",
-  "version": "0.0.6-dev.3",
+  "version": "0.0.6-dev.4",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
