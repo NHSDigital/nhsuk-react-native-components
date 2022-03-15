@@ -1,5 +1,7 @@
 # NHS.UK React Native components
 
+[![Build](https://github.com/NHSDigital/nhsuk-react-native-components/actions/workflows/ci-build.yml/badge.svg)](https://github.com/NHSDigital/nhsuk-react-native-components/actions/workflows/ci-build.yml) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/NHSDigital/nhsuk-react-native-components.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/NHSDigital/nhsuk-react-native-components/context:javascript)
+
 > **Note:** This package is currently pre-alpha. It is not yet ready for use in production.
 
 NHS.UK React Native components contains the code you need to start building user interfaces for NHS apps written in React Native.
