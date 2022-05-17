@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { StyleProp, StyleSheet, View, ViewProps, ViewStyle } from 'react-native';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 import ErrorMessage from '../error-message';
 import Text from '../text';
 

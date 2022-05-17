@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 import Text from '../text';
 
 export type ErrorMessageProps = {

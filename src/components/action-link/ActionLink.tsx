@@ -1,7 +1,7 @@
 import React from 'react';
 import { PressableProps, StyleSheet, View } from 'react-native';
 import { ArrowRightCircle } from '../icons';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 import Text from '../text';
 import Pressable from '../pressable';
 

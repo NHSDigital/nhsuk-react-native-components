@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import { TouchableWithoutFeedbackProps, StyleSheet } from 'react-native';
-import nhsuk from 'src/styles';
+import { StyleSheet, TouchableWithoutFeedbackProps } from 'react-native';
+import nhsuk from '../../styles';
 import Pressable from '../pressable';
 import Text, { TextProps } from '../text';
 

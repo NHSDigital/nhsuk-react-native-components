@@ -1,6 +1,6 @@
 import React, { Fragment, ReactNode, useEffect, useRef } from 'react';
 import { AccessibilityInfo, findNodeHandle, GestureResponderEvent, StyleSheet, View } from 'react-native';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 import Pressable from '../pressable';
 import Text from '../text';
 

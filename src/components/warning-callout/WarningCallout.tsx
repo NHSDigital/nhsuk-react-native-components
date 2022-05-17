@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 import Card, { CardProps } from '../card';
 import Text from '../text';
 

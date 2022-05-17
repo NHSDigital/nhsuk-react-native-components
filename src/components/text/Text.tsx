@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { StyleProp, StyleSheet, Text as RNText, TextProps as RNTextProps, TextStyle } from 'react-native';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 
 // See: https://github.com/nhsuk/nhsuk-frontend/tree/master/packages/core/styles/_typography.scss
 

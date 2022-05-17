@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { PressableProps, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 import Pressable from '../pressable';
 
 const cardBorderWidth = 1;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 
 export type SectionBreakProps = {
   variant?: 'xl' | 'l' | 'm';

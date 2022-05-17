@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 import FormGroup, { FormGroupProps } from '../form-group';
 import Input, { InputProps } from '../input';
 

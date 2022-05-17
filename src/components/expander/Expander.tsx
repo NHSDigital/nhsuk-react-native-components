@@ -1,8 +1,8 @@
 import React, { ReactNode, useState } from 'react';
-import { Minus, Plus } from '../icons';
 import { Pressable, StyleProp, StyleSheet, View, ViewProps, ViewStyle } from 'react-native';
-import nhsuk from 'src/styles';
 import { SvgProps } from 'react-native-svg';
+import nhsuk from '../../styles';
+import { Minus, Plus } from '../icons';
 
 // This component is a subset of the Details component: https://nhsdigital.github.io/nhsuk-react-components/?path=/story/details--expander
 

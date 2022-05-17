@@ -1,9 +1,9 @@
 import React from 'react';
 import { PressableProps, StyleSheet } from 'react-native';
-import Text from '../text';
+import nhsuk from '../../styles';
 import { ChevronLeft } from '../icons';
-import nhsuk from 'src/styles';
 import Pressable from '../pressable';
+import Text from '../text';
 
 export type BackLinkProps = {
   title: String;

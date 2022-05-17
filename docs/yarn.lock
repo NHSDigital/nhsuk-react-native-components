@@ -6232,10 +6232,10 @@ nested-error-stacks@~2.0.1:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.0.1.tgz#d2cc9fc5235ddb371fc44d506234339c8e4b0a4b"
   integrity sha512-SrQrok4CATudVzBS7coSz26QRSmlK9TzzoFbeKfcPBUFPjcQM9Rqvr/DlJkOrwI/0KcgvMub1n1g5Jt9EgRn4A==
 
-nhsuk-react-native-components@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/nhsuk-react-native-components/-/nhsuk-react-native-components-0.0.6.tgz#05d917c216d08e5358027e405947d4064cf51a05"
-  integrity sha512-gE+M+5AMxwJ+2Na04VIQWeW7xOrpuiRWmeQvJ/0Qj00mqAwDg2BhMOoHUo/YET1SyURHwsJyKVUKFAva5Tb3GQ==
+nhsuk-react-native-components@v0.0.7-alpha.3:
+  version "0.0.7-alpha.3"
+  resolved "https://registry.yarnpkg.com/nhsuk-react-native-components/-/nhsuk-react-native-components-0.0.7-alpha.3.tgz#cab33690812de793e05d4c7a9e7676cc962c9bc4"
+  integrity sha512-Gj/v/XNrS1k0MXGcobfOV3b2r3x5NLpitXrVtrF1vJJzU0Gf75AKb2LWswBWM3xp5G6qyEQ5qQBaddthmMuhfw==
   dependencies:
     color "^4.0.1"
 

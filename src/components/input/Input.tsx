@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Platform, StyleProp, StyleSheet, TextInput, TextInputProps, TextStyle, View, ViewStyle } from 'react-native';
-import nhsuk from 'src/styles';
+import approximateExUnit from 'src/utils/approximateExUnit';
+import nhsuk from '../../styles';
 import FormGroup, { FormGroupProps } from '../form-group';
 import Text, { textStyles } from '../text';
-import approximateExUnit from 'src/utils/approximateExUnit';
 
 export const inputFontStyle = textStyles['nhsuk-body-m'];
 

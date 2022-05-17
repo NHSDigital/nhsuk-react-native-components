@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Pressable, PressableProps, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 import FormGroup, { FormGroupProps } from '../form-group';
 import Text, { TextProps } from '../text';
 

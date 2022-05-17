@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import nhsuk from 'src/styles';
 import RNPickerSelect, { PickerSelectProps } from 'react-native-picker-select';
-import Text, { textStyles } from '../text';
-import { DropdownArrow } from '../icons';
+import nhsuk from '../../styles';
 import FormGroup, { FormGroupProps } from '../form-group';
+import { DropdownArrow } from '../icons';
+import Text, { textStyles } from '../text';
 
 export type SelectProps = {
   placeholder?: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, ViewProps } from 'react-native';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 import Card, { CardProps } from '../card';
 
 const ItemSeparator = () => <View style={styles.separator} />;

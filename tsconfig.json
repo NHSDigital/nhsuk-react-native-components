@@ -3,7 +3,7 @@
     "declaration": true,
     "declarationDir": "lib",
     "module": "esnext",
-    "target": "ES5",
+    "target": "ES6",
     "lib": [
       "es5",
       "es6",
@@ -12,7 +12,7 @@
       "es2017"
     ],
     "sourceMap": true,
-    "jsx": "react",
+    "jsx": "react-native",
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "types": [
@@ -23,10 +23,11 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "outDir": "lib"
   },
   "include": [
-    "src/**/*"
+    "src"
   ],
   "exclude": [
     "node_modules",

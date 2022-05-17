@@ -2,7 +2,7 @@ import { colord, extend } from 'colord';
 import mixPlugin from 'colord/plugins/mix';
 import React, { useState } from 'react';
 import { PressableProps, StyleProp, StyleSheet, TextStyle, View, ViewStyle } from 'react-native';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 import Pressable from '../pressable';
 import Text, { TextProps } from '../text';
 

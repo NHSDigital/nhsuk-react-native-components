@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import nhsuk from 'src/styles';
 import { shade, tint } from 'src/utils/color';
+import nhsuk from '../../styles';
 import Text, { TextProps } from '../text';
 
 export type TagProps = {

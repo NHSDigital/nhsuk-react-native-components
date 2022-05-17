@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, ViewProps } from 'react-native';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 import Text, { TextProps, textStyles } from '../text';
 
 export type SummaryListProps = {

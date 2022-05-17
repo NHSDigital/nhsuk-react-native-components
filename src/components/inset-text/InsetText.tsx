@@ -1,7 +1,6 @@
-import React from 'react';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
-import nhsuk from 'src/styles';
+import nhsuk from '../../styles';
 import Text from '../text';
 
 export type InsetTextProps = {

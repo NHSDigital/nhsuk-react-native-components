@@ -1,8 +1,8 @@
 import React, { ReactNode, useState } from 'react';
 import { StyleSheet, View, ViewProps } from 'react-native';
 import Svg, { Polygon } from 'react-native-svg';
-import nhsuk from 'src/styles';
 import govukEquilateralHeight from 'src/utils/govukEquilateralHeight';
+import nhsuk from '../../styles';
 import Link from '../link';
 import Pressable from '../pressable';
 import Text from '../text';
