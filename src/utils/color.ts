@@ -1,7 +1,10 @@
-import color from 'color';
+import { colord, extend } from 'colord';
+import mixPlugin from 'colord/plugins/mix';
 
-const white = color('#fff');
-const black = color('#000');
+extend([mixPlugin]);
 
-export const shade = (colour: string, percentage: number) => color(colour).mix(black, percentage).hex();
-export const tint = (colour: string, percentage: number) => color(colour).mix(white, percentage).hex();
+const white = colord('#fff');
+const black = colord('#000');
+
+export const shade = (colour: string, percentage: number) => colord(colour).mix(black, percentage).toHex();
+export const tint = (colour: string, percentage: number) => colord(colour).mix(white, percentage).toHex();

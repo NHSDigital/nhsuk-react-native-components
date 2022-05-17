@@ -1,9 +1,12 @@
+import { colord, extend } from 'colord';
+import mixPlugin from 'colord/plugins/mix';
 import React, { useState } from 'react';
 import { PressableProps, StyleProp, StyleSheet, TextStyle, View, ViewStyle } from 'react-native';
 import nhsuk from 'src/styles';
-import Text, { TextProps } from '../text';
-import Color from 'color';
 import Pressable from '../pressable';
+import Text, { TextProps } from '../text';
+
+extend([mixPlugin]);
 
 export type ButtonProps = {
   title?: string;
@@ -100,7 +103,7 @@ const Button = ({
 
 const borderRadius = 4;
 const shadowHeight = 4;
-const backgroundMixColor = (color: string) => new Color(color).mix(Color(nhsuk.colours.greyscale.grey5), 0.5).hex();
+const backgroundMixColor = (color: string) => colord(color).mix(nhsuk.colours.greyscale.grey5, 0.5).toHex();
 
 const styles = StyleSheet.create({
   container: {
