@@ -1,9 +1,9 @@
 {
   "name": "nhsuk-react-native-components",
   "version": "0.0.7-dev.0",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": "https://github.com/NHSDigital/nhsuk-react-native-components",
   "author": "NHSBT and NHSDigital",
   "license": "MIT",
@@ -22,25 +22,15 @@
   "dependencies": {
     "color": "^4.0.1"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/plugin-proposal-numeric-separator": "^7.16.0",
-    "@babel/plugin-proposal-private-methods": "^7.16.0",
-    "@babel/plugin-proposal-private-property-in-object": "^7.16.0",
-    "@babel/plugin-transform-runtime": "^7.16.4",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-react": "^7.16.0",
-    "@babel/runtime": "^7.16.3",
     "@react-native-community/eslint-config": "^3.0.1",
-    "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.0.6",
     "@types/color": "^3.0.2",
     "@types/react-native": "^0.66.3",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
-    "babel-loader": "^8.2.3",
     "eslint": "^8.2.0",
     "jest": "^27.3.1",
     "prettier": "^2.4.1",
@@ -48,10 +38,6 @@
     "react-native": "^0.66.2",
     "react-native-picker-select": "^8.0.4",
     "react-native-svg": "^12.1.1",
-    "rollup": "^2.60.0",
-    "rollup-plugin-copy-assets": "^2.0.3",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-typescript2": "^0.31.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
   },
@@ -61,10 +47,6 @@
     "react-native-picker-select": "^8.0.4",
     "react-native-svg": "^12.1.1"
   },
-  "files": [
-    "dist",
-    "lib"
-  ],
   "babel": {
     "presets": [
       "@babel/preset-env",
