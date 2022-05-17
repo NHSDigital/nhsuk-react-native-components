@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "lib",
     "module": "esnext",
     "target": "ES6",
     "lib": [
@@ -23,8 +22,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true,
-    "baseUrl": ".",
-    "outDir": "lib"
+    "baseUrl": "."
   },
   "include": [
     "src"
