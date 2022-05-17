@@ -48,7 +48,7 @@ const Card: FC<CardProps> = ({
         <View
           style={[styles.base, pressableStyle && styles.pressable, pressableStyle && pressed && styles.pressed, style]}
           testID={testID}>
-          {children}
+          <>{children}</>
         </View>
       </Pressable>
     );
@@ -65,7 +65,7 @@ const Card: FC<CardProps> = ({
         style,
       ]}
       testID={testID}>
-      {children}
+      <>{children}</>
     </View>
   );
 };
