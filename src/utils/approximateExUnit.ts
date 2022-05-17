@@ -1,4 +1,4 @@
-import { textStyles } from 'src/components/text';
+import { textStyles } from '../components/text';
 const inputFontStyle = textStyles['nhsuk-body-m'];
 
 /**

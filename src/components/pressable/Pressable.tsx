@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Insets, Pressable as RNPressable, PressableProps as RNPressableProps, View } from 'react-native';
-import calculateMinHitSlop from 'src/utils/calculateMinHitSlop';
+import calculateMinHitSlop from '../../utils/calculateMinHitSlop';
 
 export type PressableProps = {
   pressableRef?: React.Ref<View>;

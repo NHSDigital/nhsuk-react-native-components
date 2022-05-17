@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { shade, tint } from 'src/utils/color';
+import { shade, tint } from '../../utils/color';
 import nhsuk from '../../styles';
 import Text, { TextProps } from '../text';
 

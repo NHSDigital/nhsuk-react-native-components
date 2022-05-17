@@ -1,6 +1,6 @@
 import { rgb } from 'color';
 import { StyleSheet } from 'react-native';
-import { shade, tint } from 'src/utils/color';
+import { shade, tint } from '../utils/color';
 
 // These settings can be found at https://github.com/nhsuk/nhsuk-frontend/tree/master/packages/core/settings
 

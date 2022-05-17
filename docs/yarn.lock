@@ -3037,13 +3037,18 @@ color@^3.1.3:
     color-convert "^1.9.3"
     color-string "^1.6.0"
 
-color@^4.0.1, color@^4.2.3:
+color@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/color/-/color-4.2.3.tgz#d781ecb5e57224ee43ea9627560107c0e0c6463a"
   integrity sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==
   dependencies:
     color-convert "^2.0.1"
     color-string "^1.9.0"
+
+colord@^2.9.2:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/colord/-/colord-2.9.2.tgz#25e2bacbbaa65991422c07ea209e2089428effb1"
+  integrity sha512-Uqbg+J445nc1TKn4FoDPS6ZZqAvEDnwrH42yo8B40JSOgSLxMZ/gt3h4nmCtPLQeXhjJJkqBx7SCY35WnIixaQ==
 
 colorette@^1.0.7:
   version "1.4.0"
@@ -6232,12 +6237,12 @@ nested-error-stacks@~2.0.1:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.0.1.tgz#d2cc9fc5235ddb371fc44d506234339c8e4b0a4b"
   integrity sha512-SrQrok4CATudVzBS7coSz26QRSmlK9TzzoFbeKfcPBUFPjcQM9Rqvr/DlJkOrwI/0KcgvMub1n1g5Jt9EgRn4A==
 
-nhsuk-react-native-components@v0.0.7-alpha.3:
-  version "0.0.7-alpha.3"
-  resolved "https://registry.yarnpkg.com/nhsuk-react-native-components/-/nhsuk-react-native-components-0.0.7-alpha.3.tgz#cab33690812de793e05d4c7a9e7676cc962c9bc4"
-  integrity sha512-Gj/v/XNrS1k0MXGcobfOV3b2r3x5NLpitXrVtrF1vJJzU0Gf75AKb2LWswBWM3xp5G6qyEQ5qQBaddthmMuhfw==
+nhsuk-react-native-components@v0.0.7-alpha.7:
+  version "0.0.7-alpha.7"
+  resolved "https://registry.yarnpkg.com/nhsuk-react-native-components/-/nhsuk-react-native-components-0.0.7-alpha.7.tgz#a92d51c0072723b6ddcc4119ed43de8990e6f1f5"
+  integrity sha512-5MdolxEjG47frXK74YC+gCv6RKqhvtHuMVlsuav2k+wJ+oMNkZyqLy78Ge9Jf+aHbPL+8qDZTyHbIX0Kc7aefg==
   dependencies:
-    color "^4.0.1"
+    colord "^2.9.2"
 
 nice-try@^1.0.4:
   version "1.0.5"

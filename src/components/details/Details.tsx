@@ -1,7 +1,7 @@
 import React, { ReactNode, useState } from 'react';
 import { StyleSheet, View, ViewProps } from 'react-native';
 import Svg, { Polygon } from 'react-native-svg';
-import govukEquilateralHeight from 'src/utils/govukEquilateralHeight';
+import govukEquilateralHeight from '../../utils/govukEquilateralHeight';
 import nhsuk from '../../styles';
 import Link from '../link';
 import Pressable from '../pressable';
