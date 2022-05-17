@@ -17,7 +17,7 @@ jobs:
         run: yarn
 
       - name: Build Release
-        run: yarn tsc
+        run: yarn prepare
 
       - name: Bump Version - ${{ github.ref_name }}
         run: yarn version --new-version ${{ github.ref_name }} --no-git-tag-version
