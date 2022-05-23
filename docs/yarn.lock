@@ -6237,10 +6237,8 @@ nested-error-stacks@~2.0.1:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.0.1.tgz#d2cc9fc5235ddb371fc44d506234339c8e4b0a4b"
   integrity sha512-SrQrok4CATudVzBS7coSz26QRSmlK9TzzoFbeKfcPBUFPjcQM9Rqvr/DlJkOrwI/0KcgvMub1n1g5Jt9EgRn4A==
 
-nhsuk-react-native-components@v0.0.7-alpha.7:
-  version "0.0.7-alpha.7"
-  resolved "https://registry.yarnpkg.com/nhsuk-react-native-components/-/nhsuk-react-native-components-0.0.7-alpha.7.tgz#a92d51c0072723b6ddcc4119ed43de8990e6f1f5"
-  integrity sha512-5MdolxEjG47frXK74YC+gCv6RKqhvtHuMVlsuav2k+wJ+oMNkZyqLy78Ge9Jf+aHbPL+8qDZTyHbIX0Kc7aefg==
+nhsuk-react-native-components@../:
+  version "0.0.7-dev.0"
   dependencies:
     colord "^2.9.2"
 

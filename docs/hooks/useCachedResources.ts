@@ -15,6 +15,9 @@ export default function useCachedResources() {
         // Load fonts
         await Font.loadAsync({
           ...FontAwesome.font,
+          'FrutigerLTPro-Roman': require('nhsuk-react-native-components/src/assets/fonts/FrutigerLTPro-Roman.otf'),
+          'FrutigerLTPro-Italic': require('nhsuk-react-native-components/src/assets/fonts/FrutigerLTPro-Italic.otf'),
+          'FrutigerLTPro-Bold': require('nhsuk-react-native-components/src/assets/fonts/FrutigerLTPro-Bold.otf'),
           'space-mono': require('../assets/fonts/SpaceMono-Regular.ttf'),
         });
       } catch (e) {
