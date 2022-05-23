@@ -1,26 +1,49 @@
-import React from 'react';
-import { PressableProps, StyleSheet, View } from 'react-native';
-import { ArrowRightCircle } from '../icons';
+import React, { ReactNode } from 'react';
+import { Pressable, StyleSheet, View } from 'react-native';
+import { InlinePressableProps } from 'src/utils/InlinePressableProps';
 import nhsuk from '../../styles';
+import { ArrowRightCircle } from '../icons';
 import Text from '../text';
-import Pressable from '../pressable';
 
 const iconSize = 36;
 
-export type ActionLinkProps = {
-  label: string;
-  noMarginBottom?: boolean;
-} & PressableProps;
+// export type ActionLinkProps = { noMarginBottom?: boolean } & Omit<PressableProps, 'children'>;
 
-const ActionLink = ({ label, noMarginBottom, ...rest }: ActionLinkProps) => (
-  <Pressable accessibilityLabel={label} accessibilityRole="link" {...rest}>
+export interface ActionLinkProps extends InlinePressableProps {
+  /** Component for enclosing element (eg: TouchableHighlight, View, etc).
+   *
+   * @default `Pressable`
+   */
+  Component: typeof React.Component;
+
+  children: ReactNode;
+}
+
+const ActionLink: React.FunctionComponent<ActionLinkProps> = ({
+  Component = Pressable,
+  children,
+  accessibilityLabel,
+  pressableProps,
+  onPress,
+  onPressIn,
+  onPressOut,
+  onLongPress,
+}) => (
+  <Component
+    accessibilityLabel={accessibilityLabel}
+    accessibilityRole="link"
+    onPress={onPress}
+    onPressIn={onPressIn}
+    onPressOut={onPressOut}
+    onLongPress={onLongPress}
+    {...pressableProps}>
     <View style={[styles.base, noMarginBottom && styles.noMarginBottom]}>
       <ArrowRightCircle width={iconSize} height={iconSize} fill={nhsuk.colours.primary.green} style={styles.icon} />
       <Text noMarginBottom variant="h4" style={styles.label}>
-        {label}
+        {children}
       </Text>
     </View>
-  </Pressable>
+  </Component>
 );
 
 const styles = StyleSheet.create({

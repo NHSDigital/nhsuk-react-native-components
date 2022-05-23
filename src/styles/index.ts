@@ -4,22 +4,8 @@ import { shade, tint } from '../utils/color';
 
 // These settings can be found at https://github.com/nhsuk/nhsuk-frontend/tree/master/packages/core/settings
 
-const fontFamilies = {
-  normal: 'FrutigerLTPro-Roman',
-  bold: 'FrutigerLTPro-Bold',
-  italic: 'FrutigerLTPro-Italic',
-} as const;
-
-const colours = {
+const oldColours = {
   primary: {
-    blue: '#005eb8',
-    white: '#ffffff',
-    black: '#212b32',
-    green: '#007f3b',
-    purple: '#330072',
-    darkPink: '#7C2855',
-    red: '#d5281b',
-    yellow: '#ffeb3b',
     variations: {
       tintBlack10: '',
       shadeBlue20: '',
@@ -31,40 +17,11 @@ const colours = {
       transparentBlue50: '',
     },
   },
-  secondary: {
-    paleYellow: '#fff9c4',
-    warmYellow: '#ffb81C',
-    orange: '#ED8B00',
-    aquaGreen: '#00A499',
-    pink: '#AE2573',
-  },
-  greyscale: {
-    grey1: '#4c6272',
-    grey2: '#768692',
-    grey3: '#aeb7bd',
-    grey4: '#d8dde0',
-    grey5: '#f0f4f5',
-  },
   rgb: {
     grey1: 'rgb(66, 84, 98)',
   },
   alpha: {
     transparency50: 0.5,
-  },
-  text: {
-    textColor: '',
-    secondaryTextColor: '',
-    printTextColor: '',
-  },
-  links: {
-    linkColor: '',
-    linkHoverColor: '',
-    linkActiveColor: '',
-    linkVisitedColor: '',
-  },
-  focus: {
-    focusColor: '',
-    focusTextColor: '',
   },
   border: {
     borderColor: '',
@@ -190,19 +147,6 @@ const spacing = {
   spacingResponsiveScale: [0, 4, 8, 8, 16, 24, 32, 40, 48, 56],
 } as const;
 
-const typography = {
-  typographyScale: {
-    14: { fontSize: 12, lineHeight: 20 },
-    16: { fontSize: 14, lineHeight: 24 },
-    19: { fontSize: 16, lineHeight: 24 },
-    22: { fontSize: 18, lineHeight: 28 },
-    24: { fontSize: 20, lineHeight: 28 },
-    32: { fontSize: 24, lineHeight: 32 },
-    48: { fontSize: 32, lineHeight: 40 },
-    64: { fontSize: 48, lineHeight: 56 },
-  },
-} as const;
-
 // Custom styles
 const styles = StyleSheet.create({
   flexShrink: {
@@ -214,11 +158,9 @@ const styles = StyleSheet.create({
 });
 
 const nhsuk = {
-  fontFamilies,
   colours,
   globals,
   spacing,
-  typography,
   styles,
 };
 

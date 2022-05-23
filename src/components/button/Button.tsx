@@ -1,179 +1,125 @@
-import { colord, extend } from 'colord';
-import mixPlugin from 'colord/plugins/mix';
-import React, { useState } from 'react';
-import { PressableProps, StyleProp, StyleSheet, TextStyle, View, ViewStyle } from 'react-native';
-import nhsuk from '../../styles';
+import React, { ReactNode, useState } from 'react';
+import { GestureResponderEvent, StyleProp, TextStyle, View, ViewProps, ViewStyle } from 'react-native';
+import { TextSize } from 'src/styles/typography';
+import { InlinePressableProps } from 'src/utils/InlinePressableProps';
 import Pressable from '../pressable';
 import Text, { TextProps } from '../text';
+import * as styles from './styles';
 
-extend([mixPlugin]);
+export interface ButtonProps extends InlinePressableProps {
+  /** Component for enclosing element (eg: TouchableHighlight, View, etc).
+   *
+   * @default `Pressable`
+   */
+  Component: typeof React.Component;
 
-export type ButtonProps = {
-  title?: string;
-  variant?: 'primary' | 'secondary' | 'reverse';
-  noMarginBottom?: boolean;
-  accessibilityLabel?: string;
-  accessible?: boolean;
-  styleButton?: ViewStyle;
-  buttonRef?: React.Ref<any>;
+  /**
+   * Variant (style) of the button
+   * @default `primary`
+   */
+  variant: 'primary' | 'secondary' | 'reverse';
+
+  /** Children */
+  children: ReactNode;
+
+  /** Add additional styling for container component */
+  containerStyle?: StyleProp<ViewStyle>;
+
+  /** Disabled */
+  disabled?: boolean;
+
+  /** Add additional props for button component */
+  buttonProps?: ViewProps;
+
+  /** Add additional styling for button component */
+  buttonStyle?: StyleProp<ViewStyle>;
+
+  /**
+   * Change the text size of the button
+   * @default `14`
+   */
+  textSize: TextSize;
+
+  /** Add additional props for text component */
   textProps?: TextProps;
-} & PressableProps;
 
-const Button = ({
-  title,
-  variant = 'primary',
-  noMarginBottom,
-  style,
-  styleButton,
-  accessibilityLabel,
+  /** Add additional styles for text component */
+  textStyle?: StyleProp<TextStyle>;
+
+  /** Add additional props for shadow component */
+  shadowProps?: ViewProps;
+
+  /** Add additional styles for shadow component */
+  shadowStyle?: StyleProp<ViewStyle>;
+}
+
+const Button: React.FC<ButtonProps> = ({
+  children,
   disabled,
-  buttonRef,
+  variant,
+  accessibilityLabel,
+  containerStyle,
+  pressableProps,
+  buttonProps,
+  buttonStyle,
+  textSize,
+  textStyle,
+  shadowStyle,
   textProps,
-  ...rest
-}: ButtonProps) => {
-  const [pressed, setPressed] = useState(false);
+  Component = Pressable,
+  onPress,
+  onPressIn,
+  onPressOut,
+  onLongPress,
+}) => {
+  const [pressed, setPressed] = useState<boolean>(false);
 
-  const containerStyle: StyleProp<ViewStyle> = [styles.container];
-  const buttonStyle: StyleProp<ViewStyle> = [styles.button, styleButton];
-  const shadowStyle: StyleProp<ViewStyle> = [styles.shadow];
+  const handlePressIn = (event: GestureResponderEvent) => {
+    event.persist();
+    setPressed(true);
+    if (onPressIn) {
+      return onPressIn(event);
+    }
+  };
 
-  switch (variant) {
-    case 'secondary':
-      buttonStyle.push(styles.secondary);
-      shadowStyle.push(styles.secondaryShadow);
-      pressed && buttonStyle.push(styles.pressedSecondary);
-
-      if (disabled) {
-        buttonStyle.push(styles.disabledSecondary);
-        shadowStyle.push(styles.disabledSecondaryShadow);
-      }
-      break;
-    case 'reverse':
-      buttonStyle.push(styles.reverse);
-      shadowStyle.push(styles.reverseShadow);
-      pressed && buttonStyle.push(styles.pressedReverse);
-
-      if (disabled) {
-        buttonStyle.push(styles.disabledReverse);
-        shadowStyle.push(styles.disabledReverseShadow);
-      }
-      break;
-    default:
-      buttonStyle.push(styles.primary);
-      shadowStyle.push(styles.primaryShadow);
-      pressed && buttonStyle.push(styles.pressedPrimary);
-
-      if (disabled) {
-        buttonStyle.push(styles.disabledPrimary);
-        shadowStyle.push(styles.disabledPrimaryShadow);
-      }
-      break;
-  }
-
-  if (noMarginBottom) {
-    containerStyle.push(nhsuk.styles.noMarginBottom);
-  }
-
-  const textStyle: StyleProp<TextStyle> = {
-    color: variant === 'reverse' ? nhsuk.colours.buttons.reverseButtonTextColor : nhsuk.colours.buttons.buttonTextColor,
-    fontFamily: nhsuk.fontFamilies.bold,
-    marginBottom: 0,
-    textAlign: 'center',
+  const handlePressOut = (event: GestureResponderEvent) => {
+    event.persist();
+    setPressed(false);
+    if (onPressOut) {
+      return onPressOut(event);
+    }
   };
 
   return (
-    <Pressable
-      style={[containerStyle, style as any]}
-      onPressIn={() => setPressed(true)}
-      onPressOut={() => setPressed(false)}
+    <Component
+      style={[styles.button.container, containerStyle]}
       disabled={disabled}
-      accessibilityLabel={accessibilityLabel || title}
-      accessibilityRole="button"
-      pressableRef={buttonRef}
-      {...rest}>
-      <View style={buttonStyle}>
-        <Text style={textStyle} accessible={false} {...textProps}>
-          {title}
+      accessibilityLabel={accessibilityLabel}
+      onPress={onPress}
+      onPressIn={handlePressIn}
+      onPressOut={handlePressOut}
+      onLongPress={onLongPress}
+      {...pressableProps}>
+      <View
+        style={[
+          styles.button[variant],
+          disabled && styles.disabled[variant],
+          pressed && styles.pressed[variant],
+          buttonStyle,
+        ]}
+        {...buttonProps}>
+        <Text size={textSize} style={(styles.text[variant], textStyle)} {...textProps}>
+          {children}
         </Text>
       </View>
-      <View style={shadowStyle} />
-    </Pressable>
+      <View style={[styles.shadow[variant], disabled && styles.disabledShadow[variant], shadowStyle]} />
+    </Component>
   );
 };
 
-const borderRadius = 4;
-const shadowHeight = 4;
-const backgroundMixColor = (color: string) => colord(color).mix(nhsuk.colours.greyscale.grey5, 0.5).toHex();
-
-const styles = StyleSheet.create({
-  container: {
-    marginBottom: nhsuk.spacing.spacingResponsiveScale[5],
-  },
-  button: {
-    borderRadius: borderRadius,
-    paddingVertical: 12,
-    paddingHorizontal: nhsuk.spacing.spacingPoints[3],
-    zIndex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  shadow: {
-    height: shadowHeight * 2,
-    marginTop: -shadowHeight,
-    borderBottomLeftRadius: borderRadius,
-    borderBottomRightRadius: borderRadius,
-  },
-  primary: {
-    backgroundColor: nhsuk.colours.buttons.buttonColor,
-  },
-  secondary: {
-    backgroundColor: nhsuk.colours.buttons.secondaryButtonColor,
-  },
-  reverse: {
-    backgroundColor: nhsuk.colours.buttons.reverseButtonColor,
-  },
-  primaryShadow: {
-    backgroundColor: nhsuk.colours.buttons.buttonShadowColor,
-  },
-  secondaryShadow: {
-    backgroundColor: nhsuk.colours.buttons.secondaryButtonShadowColor,
-  },
-  reverseShadow: {
-    backgroundColor: nhsuk.colours.buttons.reverseButtonShadowColor,
-  },
-  pressedPrimary: {
-    top: shadowHeight,
-    backgroundColor: nhsuk.colours.buttons.buttonActiveColor,
-  },
-  pressedSecondary: {
-    top: shadowHeight,
-    backgroundColor: nhsuk.colours.buttons.secondaryButtonActiveColor,
-  },
-  pressedReverse: {
-    top: shadowHeight,
-    backgroundColor: nhsuk.colours.buttons.reverseButtonActiveColor,
-  },
-  pressedSearch: {
-    backgroundColor: nhsuk.colours.buttons.buttonActiveColor,
-  },
-  disabledPrimary: {
-    backgroundColor: backgroundMixColor(nhsuk.colours.buttons.buttonColor),
-  },
-  disabledSecondary: {
-    backgroundColor: backgroundMixColor(nhsuk.colours.buttons.secondaryButtonColor),
-  },
-  disabledReverse: {
-    backgroundColor: backgroundMixColor(nhsuk.colours.buttons.reverseButtonColor),
-  },
-  disabledPrimaryShadow: {
-    backgroundColor: backgroundMixColor(nhsuk.colours.buttons.buttonShadowColor),
-  },
-  disabledSecondaryShadow: {
-    backgroundColor: backgroundMixColor(nhsuk.colours.buttons.secondaryButtonShadowColor),
-  },
-  disabledReverseShadow: {
-    backgroundColor: backgroundMixColor(nhsuk.colours.buttons.reverseButtonShadowColor),
-  },
-});
+Button.defaultProps = {
+  variant: 'primary',
+  textSize: 14,
+};
 
 export default Button;

@@ -16,7 +16,7 @@
     "forceConsistentCasingInFileNames": true,
     "types": [
       "react",
-      "node"
+      "node",
     ],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
